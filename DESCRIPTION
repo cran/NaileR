@@ -1,6 +1,6 @@
 Package: NaileR
 Title: Interpreting Latent Variables with AI
-Version: 1.1.0
+Version: 1.2.0
 Authors@R: c(
     person("Nel", "Hervé", role = 'aut'),
     person('Sébastien', 'Lê', role = c('aut', 'cre'), email = 'sebastien.le@institut-agro.fr',
@@ -10,14 +10,15 @@ Description: A small package designed for interpreting continuous and categorica
 License: GPL (>= 2)
 Encoding: UTF-8
 RoxygenNote: 7.3.1
-Imports: dplyr, stringr, FactoMineR, glue, ollamar, magrittr
+Imports: dplyr, stringr, FactoMineR, glue, ollamar, magrittr,
+        SensoMineR
 Config/testthat/edition: 3
-Depends: R (>= 2.10)
+Depends: R (>= 3.5.0)
 LazyData: true
 NeedsCompilation: no
-Packaged: 2024-07-30 08:04:01 UTC; sebastienle
+Packaged: 2024-09-24 08:56:40 UTC; sebastienle
 Author: Nel Hervé [aut],
   Sébastien Lê [aut, cre] (<https://orcid.org/0000-0001-8814-6714>)
 Maintainer: Sébastien Lê <sebastien.le@institut-agro.fr>
 Repository: CRAN
-Date/Publication: 2024-08-01 08:40:06 UTC
+Date/Publication: 2024-09-26 21:30:06 UTC
