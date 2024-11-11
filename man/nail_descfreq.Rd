@@ -6,13 +6,13 @@
 \usage{
 nail_descfreq(
   dataset,
-  introduction = "",
+  introduction = NULL,
   request = NULL,
   model = "llama3",
   isolate.groups = FALSE,
   by.quali = NULL,
   proba = 0.05,
-  generate = TRUE
+  generate = FALSE
 )
 }
 \arguments{
@@ -64,12 +64,13 @@ req_beard_iso <- gsub('\n', ' ', req_beard_iso) |>
 stringr::str_squish()
 
 res_beard <- nail_descfreq(beard_cont,
-introduction = intro_beard_iso,
-request = req_beard_iso,
-isolate.groups = TRUE, generate = FALSE)
+                           introduction = intro_beard_iso,
+                           request = req_beard_iso,
+                           isolate.groups = TRUE,
+                           generate = FALSE)
 
-res_beard$prompt[1]
-res_beard$prompt[2]
+res_beard[[1]]
+res_beard[[2]]
 
 intro_beard <- 'A survey was conducted about beards
 and 8 types of beards were described.
@@ -83,8 +84,10 @@ req_beard <- gsub('\n', ' ', req_beard) |>
 stringr::str_squish()
 
 res_beard <- nail_descfreq(beard_cont,
-introduction = intro_beard,
-request = req_beard)
+                           introduction = intro_beard,
+                           request = req_beard,
+                           generate = TRUE)
+
 cat(res_beard$response)
 
 text <- res_beard$response
@@ -131,7 +134,9 @@ req_children <- gsub('\n', ' ', req_children) |>
 stringr::str_squish()
 
 res_children <- nail_descfreq(children,
-introduction = intro_children, request = req_children)
+                              introduction = intro_children,
+                              request = req_children,
+                              generate = TRUE)
 
 cat(res_children$response)
 }
